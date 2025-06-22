@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +14,8 @@
       background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
       color: #333;
       line-height: 1.6;
-      scroll-behavior: smooth;
     }
+    
     .page {
       min-height: 100vh;
       padding: 4rem 2rem;
@@ -28,32 +27,56 @@
       position: relative;
       overflow: hidden;
     }
-    h1, h2 {
+    
+    h1 {
       font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
       color: #e84393;
+      margin-bottom: 2rem;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-    h1 { font-size: 3.5rem; margin-bottom: 2rem; }
-    h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+    
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5rem;
+      color: #e84393;
+      margin-bottom: 1.5rem;
+    }
+    
     .heart {
       color: #e84393;
       font-size: 2rem;
       margin: 0 0.5rem;
       animation: pulse 1.5s infinite;
     }
+    
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.3); }
       100% { transform: scale(1); }
     }
-    .poem, .message-box {
-      background: rgba(255,255,255,0.9);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    
+    .poem {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      line-height: 2;
+      max-width: 600px;
+      margin: 2rem auto;
       padding: 2rem;
+      background: rgba(255,255,255,0.8);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .message-box {
+      background: rgba(255,255,255,0.9);
+      padding: 2rem;
+      border-radius: 15px;
       max-width: 700px;
       margin: 2rem auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+    
     .memory {
       display: flex;
       align-items: center;
@@ -62,11 +85,13 @@
       background: rgba(255,255,255,0.7);
       border-radius: 10px;
     }
+    
     .memory-icon {
       font-size: 2.5rem;
       color: #e84393;
       margin-right: 1.5rem;
     }
+    
     .nav-dots {
       position: fixed;
       right: 2rem;
@@ -75,6 +100,7 @@
       display: flex;
       flex-direction: column;
     }
+    
     .dot {
       width: 12px;
       height: 12px;
@@ -85,10 +111,29 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
+    
     .dot.active {
       opacity: 1;
       transform: scale(1.3);
     }
+    
+    .floral-decoration {
+      position: absolute;
+      font-size: 10rem;
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .top-left {
+      top: -3rem;
+      left: -3rem;
+    }
+    
+    .bottom-right {
+      bottom: -3rem;
+      right: -3rem;
+    }
+    
     .photo-frame {
       width: 200px;
       height: 200px;
@@ -104,12 +149,14 @@
       font-size: 3rem;
       color: #e84393;
     }
+    
     .countup {
       font-size: 3rem;
       font-weight: bold;
       color: #e84393;
       margin: 1rem 0;
     }
+    
     .quality {
       display: inline-block;
       background: #e84393;
@@ -122,79 +169,162 @@
   </style>
 </head>
 <body>
+
+<!-- Navigation Dots -->
 <div class="nav-dots">
   <div class="dot active" data-page="1"></div>
   <div class="dot" data-page="2"></div>
   <div class="dot" data-page="3"></div>
   <div class="dot" data-page="4"></div>
 </div>
+
+<!-- Page 1: Title Page -->
 <div class="page" id="page1">
-  <div class="photo-frame"><span class="material-icons">photo_camera</span></div>
+  <span class="material-icons floral-decoration top-left">local_florist</span>
+  <span class="material-icons floral-decoration bottom-right">local_florist</span>
+  
+  <div class="photo-frame">
+    <span class="material-icons">photo_camera</span>
+  </div>
+  
   <h1>For My Beautiful Sister</h1>
+  
   <div class="message-box">
-    <p>You've made my life brighter and warmer just by being in it.</p>
-    <p>This page is just a small token of how much you mean to me.</p>
-    <div><span class="heart">❤</span><span class="heart">❤</span><span class="heart">❤</span></div>
+    <p>From the moment you came into my life, you've made it brighter, warmer, and infinitely more beautiful.</p>
+    <p>This is just a small token of how much you mean to me.</p>
+    <div style="margin: 2rem 0;">
+      <span class="heart">❤</span>
+      <span class="heart">❤</span>
+      <span class="heart">❤</span>
+    </div>
     <p>Scroll down to see more...</p>
   </div>
 </div>
+
+<!-- Page 2: Why I Love You -->
 <div class="page" id="page2">
   <h2>Why You're So Special</h2>
+  
   <div class="message-box">
-    <p>Just a few of the countless reasons I love you:</p>
-    <div class="memory"><span class="material-icons memory-icon">favorite</span><div><h3>Your Heart</h3><p>So kind and generous.</p></div></div>
-    <div class="memory"><span class="material-icons memory-icon">mood</span><div><h3>Your Smile</h3><p>Lights up the darkest days.</p></div></div>
-    <div class="memory"><span class="material-icons memory-icon">auto_awesome</span><div><h3>Your Spirit</h3><p>Inspires me every day.</p></div></div>
-    <div class="memory"><span class="material-icons memory-icon">celebration</span><div><h3>Your Laugh</h3><p>So full of joy!</p></div></div>
+    <p>There are a million reasons why I love you, but here are just a few:</p>
+    
+    <div class="memory">
+      <span class="material-icons memory-icon">favorite</span>
+      <div>
+        <h3>Your Heart</h3>
+        <p>You have the kindest, most generous heart of anyone I know.</p>
+      </div>
+    </div>
+    
+    <div class="memory">
+      <span class="material-icons memory-icon">mood</span>
+      <div>
+        <h3>Your Smile</h3>
+        <p>Your smile can light up even the darkest days.</p>
+      </div>
+    </div>
+    
+    <div class="memory">
+      <span class="material-icons memory-icon">auto_awesome</span>
+      <div>
+        <h3>Your Spirit</h3>
+        <p>Your strength and resilience inspire me every day.</p>
+      </div>
+    </div>
+    
+    <div class="memory">
+      <span class="material-icons memory-icon">celebration</span>
+      <div>
+        <h3>Your Laugh</h3>
+        <p>Your laugh is contagious and brings joy to everyone around you.</p>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- Page 3: Poetry -->
 <div class="page" id="page3">
   <h2>A Poem For You</h2>
+  
   <div class="poem">
     <p>My sister, my friend, my guiding light,</p>
     <p>Through darkest days and brightest night.</p>
     <p>Your love's a flame that never dies,</p>
-    <p>A constant star in changing skies.</p><br>
+    <p>A constant star in changing skies.</p>
+    <br>
     <p>Through all the years, through thick and thin,</p>
     <p>You've been my rock, my next of kin.</p>
     <p>No bond so strong, no tie so true,</p>
-    <p>As the love I hold, dear sister, for you.</p><br>
+    <p>As the love I hold, dear sister, for you.</p>
+    <br>
     <p>So take these words, both old and new,</p>
     <p>A simple truth: I'll always love you.</p>
   </div>
-  <div><span class="quality">Loving</span><span class="quality">Kind</span><span class="quality">Strong</span><span class="quality">Amazing</span></div>
+  
+  <div style="margin-top: 2rem;">
+    <span class="quality">Loving</span>
+    <span class="quality">Kind</span>
+    <span class="quality">Beautiful</span>
+    <span class="quality">Strong</span>
+    <span class="quality">Amazing</span>
+  </div>
 </div>
+
+<!-- Page 4: Final Message -->
 <div class="page" id="page4">
   <h2>Forever Grateful</h2>
+  
   <div class="message-box">
     <div class="countup">∞</div>
     <p>That's how much I love you - to infinity and beyond!</p>
-    <p>No matter where life takes us,<br>how much time passes,<br><strong style="color:#e84393;">You'll always be my sister and I'll always love you.</strong></p>
-    <div style="font-size: 3rem; color: #e84393;">❤ ❤ ❤</div>
+    
+    <div style="margin: 2rem 0; font-size: 1.2rem;">
+      <p>No matter where life takes us,</p>
+      <p>No matter how much time passes,</p>
+      <p>One thing will never change:</p>
+      <p style="font-weight: bold; font-size: 1.5rem; color: #e84393;">You'll always be my sister and I'll always love you.</p>
+    </div>
+    
+    <div style="display: flex; justify-content: center; margin-top: 2rem;">
+      <span class="material-icons" style="font-size: 3rem; color: #e84393;">favorite</span>
+      <span class="material-icons" style="font-size: 3rem; color: #e84393; margin: 0 1rem;">favorite</span>
+      <span class="material-icons" style="font-size: 3rem; color: #e84393;">favorite</span>
+    </div>
   </div>
 </div>
+
 <script>
+  // Simple navigation for the dots
   document.querySelectorAll('.dot').forEach(dot => {
     dot.addEventListener('click', () => {
       const pageNumber = dot.getAttribute('data-page');
-      document.querySelector(`#page${pageNumber}`).scrollIntoView({ behavior: 'smooth' });
+      document.querySelector(`#page${pageNumber}`).scrollIntoView({
+        behavior: 'smooth'
+      });
+      
+      // Update active dot
       document.querySelectorAll('.dot').forEach(d => d.classList.remove('active'));
       dot.classList.add('active');
     });
   });
+  
+  // Update active dot on scroll
   window.addEventListener('scroll', () => {
     const pages = document.querySelectorAll('.page');
     let activePage = 1;
+    
     pages.forEach((page, index) => {
       const rect = page.getBoundingClientRect();
       if (rect.top <= window.innerHeight / 2) {
         activePage = index + 1;
       }
     });
+    
     document.querySelectorAll('.dot').forEach(dot => {
       dot.classList.toggle('active', dot.getAttribute('data-page') == activePage);
     });
   });
 </script>
+
 </body>
 </html>

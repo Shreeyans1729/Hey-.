@@ -8,6 +8,27 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     body {
+  /* Animated gradient background */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(270deg, #e0e7ff, #c7d2fe, #a5b4fc, #818cf8, #f3e8ff, #c4b5fd, #a78bfa);
+  background-size: 400% 400%;
+  animation: gradientMove 20s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} qu
+    {
       font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
